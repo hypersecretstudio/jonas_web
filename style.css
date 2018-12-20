@@ -15,8 +15,23 @@
 }
 
 @font-face {
+    font-family: fifty-regular;
+    src: url('fonts/FiftyTrial-Regular.otf');
+}
+
+@font-face {
+    font-family: new-burns-regular;
+    src: url('fonts/NewBurnsTrial-Regular.otf');
+}
+
+@font-face {
     font-family: sharpBlack10;
     src: url('fonts/SharpGrotesk-Black10.otf');
+}
+
+@font-face {
+    font-family: larish;
+    src: url('fonts/larish_neue_semibold.otf');
 }
 
 html {
@@ -27,14 +42,14 @@ body {
     font-family: 'sharpBook25', sans-serif;
     margin: 0px;
     padding: 0px;
-    scrollbar-color: #fff #000;
+    scrollbar-color: #fff #00f;
 }
 
 .header, .footer {
     text-align: center;
     font-size: 2rem;
     position: fixed;
-    height: 50px;
+    height: 30px;
     left: 0px;
     width: 100%;
     background-color: #0f0;
@@ -55,49 +70,44 @@ qui li cambi globalmente */
 #project1, #project2, #project3, #project4 {
     position: fixed;
     width: 50%;
-    height: calc(50% - 50px);
+    height: calc(50% - 30px);
     background: linear-gradient(45deg, #f99884, #84f9a1);
     overflow-y: scroll;
     z-index: 0;
+    border-top: solid 3px #00f;
+    /* border: solid 3px #00f; */
     /* font-size: 15vh; */
 }
 
 #project1, #project2 {
-    top: 50px;
+    top: 30px;
 }
 
 #project3, #project4 {
-    bottom: 50px;
+    bottom: 30px;
+    border-bottom: solid 3px #00f;
 }
 
-/* qui singolarment */
+/* qui singolarmente */
 
 #project1 {
-    /* top: 0px; */
     left: 0px;
 }
 
-#project1 {
-    /* font-family: 'Courier New', Courier, monospace; */
-}
-
 #project2 {
-    /* top: 0px; */
     right: 0px;
 }
 
 #project3 {
-    /* bottom: 0px; */
     left: 0px;
 }
 
 #project4 {
-    /* bottom: 0px; */
     right: 0px;
 }
 
 .title {
-    height: 100%;
+    /* height: 100%; */
 }
 
 /* questi sono i titoli dei progetti box bianchi */
@@ -127,7 +137,9 @@ qui li cambi globalmente */
     border-radius: 50px;
     box-shadow: 6px 6px #00f;
     background-color: #ff0;
-    font-family: 'sharpBook20', sans-serif;
+    font-style: italic;
+    /* font-weight: 900; */
+    /* font-family: 'sharpBook20', sans-serif; */
     /* font-family: 'Prompt', sans-serif;
     font-weight: 900; */
 }
@@ -153,12 +165,14 @@ qui li cambi globalmente */
 }
 
 .content-text {
-    /* font-family: 'sharpBlack10', sans-serif; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    font-family: 'larish', serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     width: calc(100% - 10px);
     position: relative;
     height: calc(100% - 63px);
-    background-color: #84f9a1;
+    background-color: #00f;
+    /* background-color: #84f9a1; */
     /*nice color*/
     overflow-y: scroll;
     hyphens: manual;
@@ -188,36 +202,105 @@ qui li cambi globalmente */
     text-align: center;
     transform: translate(0, -12.5px);
     font-size: 0.6rem;
-    width: calc(100% - 80px);
+    width: calc(100% - 52px);
     z-index: 11;
 }
 
 .content-buttons {
-    width: 80px;
+    width: 52px;
     height: 50px;
     float: left;
     z-index: 12;
 }
 
-.close-button, .enlarge-button, .reduce-button {
-    /* position: absolute; */
-    float: left;
-    /* top: 25px; */
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    margin: 4px 0px 0px 4px;
-    box-shadow: 2px 2px #00f;
-}
-
 .close-button {
+    cursor: not-allowed;
+    position: absolute;
+    /* float: left; */
+    /* top: 25px; */
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    /* margin: 4px 0px 0px 4px; */
+    box-shadow: 5px 5px #000;
     background-color: #f00;
+    border: solid 2px #fff;
 }
 
-.enlarge-button {
-    background-color: #0f0;
+.close-button:hover {
+    box-shadow: 2px 2px #000;
+    top: 3px;
+    left: 3px;
 }
 
-.reduce-button {
-    background-color: #ff0;
+.content-img {
+    width: 100%;
+    height: auto;
+    /* text-align: center; */
+    /* overflow-x: scroll; */
+}
+
+.content-img img {
+    display: block;
+    margin: 15px auto;
+    width: 15%;
+    max-width: 650px;
+    height: auto;
+    /* float: left; */
+    /* margin-left: 5px; */
+    transform: rotate(180deg);
+    transition-property: width, height, transform;
+    transition-duration: 2s;
+    border: solid 3px #0f0;
+    /* box-shadow: #fa0 5px 5px 5px; */
+}
+
+.content-img img:hover {
+    width: 90%;
+    transform: rotate(0deg);
+    height: auto;
+    /* float: left; */
+    /* margin-left: 5px; */
+}
+
+.project-container {}
+
+#warning {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffffcc;
+    font-size: 10vh;
+    text-align: center;
+    z-index: 999999999;
+}
+
+@media screen and (orientation:portrait) {
+    #warning {
+        display: block;
+    }
+}
+
+@media only screen and (max-device-width : 900px) {
+    html{
+        font-size: 75%;
+    }
+    .project-container{
+        position: fixed;
+        top: 0px;
+        left:0px;
+        width: 100%;
+        height: 100
+    }
+    .content{
+        top: 50%;
+        left: 50%;
+        width: 95vw;
+        height: 95vh;
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
 }

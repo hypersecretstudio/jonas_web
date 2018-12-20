@@ -35,7 +35,7 @@ blog.postsList({ number: 100 })
     })
     .catch(error => { console.error(error) });
 
-function extractImgs(data){
+function extractImgs(data) {
     const result = [];
     Object.keys(data).forEach(key => {
         result.push(data[key].URL);
@@ -76,11 +76,11 @@ function extractImgs(data){
 
 function render_web_page(content) {
     const img_sizes = {
-        large : '?w=1024',
-        small : '?w=300',
-        thumbnail : '?w=150'
+        large: '?w=1024',
+        small: '?w=300',
+        thumbnail: '?w=150'
     };
-    
+
     let index = 1;
     let id_index = 0;
     const project_container = document.getElementById('project-container');
@@ -99,17 +99,23 @@ function render_web_page(content) {
             // create a div element with the content
             const content_div = document.createElement('div');
             content_div.setAttribute('class', 'content');
+
+            // here we create the div containing the html text
             const content_text = document.createElement('div');
             content_text.setAttribute('class', 'content-text');
-            content_text.innerHTML = content[project][title].text;
-            content_div.appendChild(content_text);
+            const regex = /\<img[^>]*>/g;//regex to replace img tags
+            const HTMLText = content[project][title].text.replace(regex, '');// here we do the replacement
+            content_text.innerHTML = HTMLText;// here we insert the text
+            content_div.appendChild(content_text);//append text tpo the div
+
+
+            // here we create the header of each project
             const header = document.createElement('div')
             header.setAttribute('class', 'content-header');
             const header_title = document.createElement('div');
             header_title.setAttribute('class', 'header-title');
             header_title.innerText = title;
             header.appendChild(header_title);
-            // header.innerText = title;
             // here we need to add a close button
             const header_btns = document.createElement('div');
             header_btns.setAttribute('class', 'content-buttons');
@@ -119,36 +125,51 @@ function render_web_page(content) {
             close_btn.onclick = () => $(content_div).toggle('fast');
             header_btns.appendChild(close_btn);
 
-            const enlarge_btn = document.createElement('div');
-            enlarge_btn.setAttribute('class', 'enlarge-button');
-            enlarge_btn.onclick = () => {
-                $(content_div).width(innerWidth - 100).height(innerHeight - 100).css({ top: 50, left: 50 });
-                // content_text.style.height
+            // const enlarge_btn = document.createElement('div');
+            // enlarge_btn.setAttribute('class', 'enlarge-button');
+            // enlarge_btn.onclick = () => {
+            //     $(content_div).width(innerWidth - 100).height(innerHeight - 100).css({ top: 50, left: 50 });
+            //     // content_text.style.height
+            // }
+            // header_btns.appendChild(enlarge_btn);
+
+            // const reduce_btn = document.createElement('div');
+            // reduce_btn.setAttribute('class', 'reduce-button');
+            // reduce_btn.onclick = () => {
+            //     $(content_div).width(300).height(innerHeight * 0.65);
+            // };
+            // header_btns.appendChild(reduce_btn);
+
+            header.insertBefore(header_btns, header.firstChild);//insert buttons
+            // here we create our image container
+
+            const imgs = content[project][title].imgs;
+            if (imgs.length > 0) {
+                const content_imgs = document.createElement('div');
+                content_imgs.setAttribute('class', 'content-img');
+                for (const url of imgs) {
+                    const img = document.createElement('img');
+                    img.setAttribute('src', url);
+                    content_imgs.appendChild(img);
+                }
+                content_text.appendChild(content_imgs);
             }
-            header_btns.appendChild(enlarge_btn);
 
-            const reduce_btn = document.createElement('div');
-            reduce_btn.setAttribute('class', 'reduce-button');
-            reduce_btn.onclick = () => {
-                $(content_div).width(300).height(innerHeight * 0.65);
-            };
-            header_btns.appendChild(reduce_btn);
-
-            header.insertBefore(header_btns, header.firstChild);
-            content_div.insertBefore(header, content_div.firstChild);
+            content_div.insertBefore(header, content_div.firstChild);//insert header
             const id_name = 'content' + id_index;
             content_div.setAttribute('id', id_name);
-            const gutter = 50;
-            const w = Math.floor(Math.random() * (innerWidth - 300));//correct this!
-            const h = Math.floor(Math.random() * (innerHeight - 300));
-            content_div.style.top = h + 'px';
-            content_div.style.left = w + 'px';
+            if (window.innerWidth < 900) {
 
-            content_div.style.position.fixed;
-
-            project_container.appendChild(content_div);
+            } else {
+                const w = Math.floor(Math.random() * (innerWidth - 300));//correct this!
+                const h = Math.floor(Math.random() * (innerHeight - 300));
+                content_div.style.top = h + 'px';
+                content_div.style.left = w + 'px';
+            }
+            project_container.appendChild(content_div);//insert in the project container
             $(content_div).draggable();//make the divs draggable
             $(content_div).resizable();//make the divs resizable
+
             // we need to append all the
             // titles of the the project as a list
             const list_element = document.createElement('div');
