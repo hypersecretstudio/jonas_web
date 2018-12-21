@@ -1,0 +1,331 @@
+{
+    "Eigene Projekte": [
+        {
+            "title": "Masculinité(s)*",
+            "year": [
+                2018
+            ],
+            "place": [
+                "ESPACE ST MARTIN, Lausanne"
+            ],
+            "header": [
+                "KÜNSTLERISCHE LEITUNG JONAS GILLMANN",
+                "PERFORMANCE SIBYLLE MUMENTHALER",
+                "VIDEO INGVILD JERVIDALO",
+                "OEIL EXTERIEURE MARIO SCHULZE, ALINE KOHLER"
+            ],
+            "content": "Die Video-Installation MASCULINITÉ(S)* setzt sich mit der Konstruktionen von Männlichkeit(en)* auseinander. Sie thematisiert Männlichkeit* als ein kulturelles Muster und ein Setting sozialer Anforderungen, mit denen sich all jene auseinandersetzen müssen, die als Jungen oder Männer* anerkannt werden wollen oder die von ihrem Umfeld als Jungen oder Männer* gesehen werden - auch wenn sie sich selbst nicht als solche empfinden. Unter dem Titel HOW TO BE A MAN werden als Video-Tutorial Verhaltensweisen zum Nachahmen vorgeführt, die für ein erfolgreiches Stattfinden in einer patriarchalen Ordnung zwingend sind. In der Über-Affirmation hegemonialer Männlichkeit* entblättert HOW TO BE A MAN Blickregime und männlich* codierte Körperlichkeiten auf ihre patriarchale Matrix.",
+            "footer": [
+                "PRODUKTION LES JOURNÉES TAC TAC TAC"
+            ],
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Gästezimmer",
+            "year": [
+                2018
+            ],
+            "place": [
+                "ROXY BIRSFELDEN, Basel",
+                "UNMUTE ARTSABILITY FESTIVAL, Cape Town",
+                "CENTER FOR THE LESS GOOD IDEA, Johannesburg",
+                "KZNSA GALLERY, Durban"
+            ],
+            "header":[
+                "KÜNSTLERISCHE LEITUNG JONAS GILLMANN, UTE SENGEBUSCH",
+                "FEATURING THOMAS BURKHALTER, BRIGITTE DÄTWYLER, BLU DOPPE, MPUME MTHOMBENI, BELINDA HENWOOD, ANDILE VELLEM, PRINCESS ZINZI MHLONGO",
+                "SZENOGRAHIE OLIVIA SUTER",
+                "PRODUKTIONSLEITUNG KATHRIN WALDE"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "VIEWWWER",
+            "year": [
+                2017
+            ],
+            "place": [
+                "Solothurn"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Das Unglück braucht keine Zeit",
+            "year": [
+                2016
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Tanzt weiter und vergesst das Weinen nicht",
+            "year": [
+                2015
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Hamlet",
+            "year": [
+                2013
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Wer auf der Welt",
+            "year": [
+                2011
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        }
+    ],
+    "Dramaturgien": [
+        {
+            "title": "One at the Time",
+            "year": [
+                2018
+            ],
+            "place": [
+                "Bern",
+                "Basel",
+                "Brig",
+                "Cape Town"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Das Jakob Burckhardt Katzenstück",
+            "year": [
+                2018
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Rehearsal for a Better World",
+            "year": [
+                2018
+            ],
+            "place": [
+                "Genf",
+                "Lausanne",
+                "Bern",
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Meine Heidi Deine Heidi",
+            "year": [
+                2017
+            ],
+            "place": [
+                "Basel",
+                "Baden"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Live-Film-Hörspiel",
+            "year": [
+                2015,
+                2016,
+                2017
+            ],
+            "place": [
+                "Basel",
+                "Bern",
+                "Baden",
+                "Dortmund"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Lachen mit Hand vor dem Mund",
+            "year": [
+                2015
+            ],
+            "place": [
+                "Zürich",
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        }
+    ],
+    "Formate und Vermittlung": [
+        {
+            "title": "Workshop Masculinité(s)*",
+            "year": [
+                2019
+            ],
+            "place": [
+                "Genf"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Stammtisch freie Szene",
+            "year": [
+                2018,
+                2019
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Kunstraum bblackboxx",
+            "year": [
+                2013,
+                2014,
+                2015,
+                2016,
+                2017,
+                2018
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "The Spring Thing",
+            "year": [
+                2018
+            ],
+            "place": [
+                "Romainmôtier"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Workshop GUESTROOM",
+            "year": [
+                2018
+            ],
+            "place": [
+                "Durban"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        },
+        {
+            "title": "Unerhört!",
+            "year": [
+                2017
+            ],
+            "place": [
+                "Basel"
+            ],
+            "content": "",
+            "imgs": [
+                "url1",
+                "url2",
+                "etc"
+            ]
+        }
+    ],
+    "Kontakt": []
+}

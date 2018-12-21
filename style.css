@@ -38,31 +38,76 @@ html {
     font-size: 100%;
 }
 
+/* SCROLLBAR */
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #00f;  /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0f0;
+    /* border: 1px solid rgb(0,0,0); */
+    border: 3px solid transparent;
+    background-clip: content-box; 
+}
+
+
 body {
     font-family: 'sharpBook25', sans-serif;
     margin: 0px;
     padding: 0px;
-    scrollbar-color: #fff #00f;
+    scrollbar-color: #0f0 #00f;
 }
 
+/*
+    header and footer section
+*/
 .header, .footer {
-    text-align: center;
-    font-size: 2rem;
+    /* text-align: center; */
     position: fixed;
     height: 30px;
     left: 0px;
     width: 100%;
     background-color: #0f0;
+    z-index: 5;
 }
 
 .header {
-    z-index: 5;
     top: 0px;
+    border-bottom: solid 3px #00f;
 }
 
 .footer {
     bottom: 0px;
+    border-top: solid 3px #00f;
 }
+#project-clear, #project-latest, #project-random, #contact-me{
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    /* background-color: #00f; */
+}
+#project-clear:hover, #project-latest:hover, #project-random:hover, #contact-me:hover{
+    color: #f00;
+    /* font-style: italic; */
+}
+#project-clear, #project-random{
+    left: 0px;
+    padding-left: 5px;
+}
+#project-latest, #contact-me{
+    right: 0px;
+    padding-right: 5px;
+}
+/*
+end of header footer
+*/
 
 /* questo qua sotto sone i 4 div
 qui li cambi globalmente */
@@ -70,22 +115,22 @@ qui li cambi globalmente */
 #project1, #project2, #project3, #project4 {
     position: fixed;
     width: 50%;
-    height: calc(50% - 30px);
+    height: calc(50% - 34px);
     background: linear-gradient(45deg, #f99884, #84f9a1);
     overflow-y: scroll;
     z-index: 0;
-    border-top: solid 3px #00f;
+    /* padding-bottom: 5px; */
     /* border: solid 3px #00f; */
     /* font-size: 15vh; */
 }
 
 #project1, #project2 {
-    top: 30px;
+    top: 33px;
 }
 
 #project3, #project4 {
-    bottom: 30px;
-    border-bottom: solid 3px #00f;
+    bottom: 33px;
+    border-top: solid 3px #00f;
 }
 
 /* qui singolarmente */
@@ -108,8 +153,8 @@ qui li cambi globalmente */
 
 .title {
     /* height: 100%; */
+    padding-top: 3px;
 }
-
 /* questi sono i titoli dei progetti box bianchi */
 
 .project-list div {
@@ -119,15 +164,20 @@ qui li cambi globalmente */
     float: left;
     width: -moz-min-content;
     width: min-content;
-    margin: 0.35rem;
-    padding: 0.8rem;
+    margin: 0.5rem;
+    padding: 1.2rem;
     height: auto;
     color: #000;
+    /* color: transparent; */
+    /* background: linear-gradient(0deg, #fff, #00f);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; */
     background-color: #fff;
     border: solid 3px #000;
     box-shadow: 3px 3px #00f;
     border-radius: 0px;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     text-align: center;
 }
 
@@ -275,8 +325,25 @@ qui li cambi globalmente */
     text-align: center;
     z-index: 999999999;
 }
-
-@media screen and (orientation:portrait) {
+.idle-container{
+    background-color: #f99884;
+    width: 7%;
+    max-width: 45px;
+    height: auto;
+    position: fixed;
+    z-index: 99999999;
+}
+#idle, #idle-show{
+    width: 100%;
+    height: auto;
+}
+#idle{
+    display: none;
+}
+#idle-show{
+    display: block;
+}
+@media screen and (orientation:portrait) and (max-device-width : 900px){
     #warning {
         display: block;
     }

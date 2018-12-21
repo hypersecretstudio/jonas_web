@@ -1,19 +1,58 @@
-const wpcom = WPCOM();
-const blog = wpcom.site('jonasgillman.wordpress.com');
-const data = [];
-blog.postsList({ number: 100 })
-    .then(list => {
-        console.log(list)
-        for (const post of list.posts) {
-            const content = {
-                "title": post.title,
-                "content": post.content,
-                "excerpt": post.excerpt,
-                "category": Object.keys(post.categories)[0],
-                "imgs": extractImgs(post.attachments)
-            }
-            data.push(content);
-        }
+// const wpcom = WPCOM();
+// const blog = wpcom.site('jonasgillman.wordpress.com');
+// const data = [];
+// blog.postsList({ number: 100 })
+//     .then(list => {
+//         console.log(list)
+//         for (const post of list.posts) {
+//             const content = {
+//                 "title": post.title,
+//                 "content": post.content,
+//                 "excerpt": post.excerpt,
+//                 "category": Object.keys(post.categories)[0],
+//                 "imgs": extractImgs(post.attachments)
+//             }
+//             data.push(content);
+//         }
+//         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
+//             let parent = currentValue.category;
+//             let child = currentValue.title;
+//             if (!accumulator[parent]) {
+//                 accumulator[parent] = {};
+//             }
+//             if (!accumulator[parent][child]) {
+//                 accumulator[parent][child] = [];
+//             }
+//             accumulator[parent][child] = {
+//                 text: currentValue.content,
+//                 short: currentValue.excerpt,
+//                 imgs: currentValue.imgs
+//             };
+//             return accumulator;
+//         }, {});
+//         console.log(web_content);
+//         render_web_page(web_content);
+//     })
+//     .catch(error => { console.error(error) });
+
+// function extractImgs(data) {
+//     const result = [];
+//     Object.keys(data).forEach(key => {
+//         result.push(data[key].URL);
+//     })
+//     console.log(result);
+//     return result;
+// }
+let data;
+
+const URL = 'wp.json';
+fetch(URL)
+    .then(response => {
+        return response.json();
+    })
+    .then(json => {
+        data = json.posts;
+        // console.log(data);
         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
             let parent = currentValue.category;
             let child = currentValue.title;
@@ -30,51 +69,19 @@ blog.postsList({ number: 100 })
             };
             return accumulator;
         }, {});
+
         console.log(web_content);
         render_web_page(web_content);
     })
-    .catch(error => { console.error(error) });
-
-function extractImgs(data) {
-    const result = [];
-    Object.keys(data).forEach(key => {
-        result.push(data[key].URL);
-    })
-    console.log(result);
-    return result;
-}
-// let data;
-
-// const URL = 'http://localhost:5000/wp';
-// fetch(URL)
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(json => {
-//         data = json.posts;
-//         // console.log(data);
-//         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
-//             let parent = currentValue.category;
-//             let child = currentValue.title;
-//             if (!accumulator[parent]) {
-//                 accumulator[parent] = {};
-//             }
-//             if (!accumulator[parent][child]) {
-//                 accumulator[parent][child] = [];
-//             }
-//             accumulator[parent][child] = {
-//                 text: currentValue.content,
-//                 short: currentValue.excerpt
-//             };
-//             return accumulator;
-//         }, {});
-
-//         console.log(web_content);
-//         render_web_page(web_content);
-//     })
-//     .catch(err => console.log(err))
-
+    .catch(err => console.log(err))
+let angle = 0;
 function render_web_page(content) {
+
+    /**
+     * this gets displayed while grabbing 
+     * the data
+     */
+
     const img_sizes = {
         large: '?w=1024',
         small: '?w=300',
@@ -185,4 +192,63 @@ function render_web_page(content) {
         });
         index++;
     });
+    /**
+     * this will be displayed after the data is rendered
+     * in the webpage
+     */
+
+
+
+    setInterval(() => {
+        // console.log(position);
+        const headImg = document.querySelector('.idle-container img');
+        const rotation = 'transform: rotate(' + angle + 'deg);';
+        headImg.setAttribute('style', rotation);
+        angle = (angle + 3) % 360;
+    }, 50);
+
+    window.onmousemove = (event) => {
+        let x = event.clientX + 10;
+        let y = event.clientY + 10;
+
+        const head_div = document.querySelector('.idle-container');
+
+        const bbox = head_div.getBoundingClientRect();
+        if (x > innerWidth / 2) x -= bbox.width + 10;
+        if (y > innerHeight / 2) y -= bbox.height + 10;
+
+        const position = 'top: ' + y + 'px; left: ' + x + 'px;';
+        head_div.setAttribute('style', position);
+    }
+
+
+
+    $('.function-buttons').hover((el) => {
+        const head_div = document.querySelector('img#idle');
+        head_div.setAttribute('id', 'idle-show')
+    }, (el) => {
+        const head_div = document.querySelector('img#idle-show');
+        head_div.setAttribute('id', 'idle')
+    });
+
+    $('#project-clear').click(() => {
+
+        close_all_divs()
+    });
+    $('#project-random').click(()=>{
+        close_all_divs();
+        const content_divs = document.getElementsByClassName('content');
+        const random_idx = Math.floor(Math.random() * content_divs.length);
+        content_divs[random_idx].style.display = 'block';
+    })
+}
+
+function close_all_divs() {
+
+    const open_divs = document.getElementsByClassName('content');
+    for (const div of open_divs) {
+        if (div.style.display === 'block') {
+            div.style.display = 'none';
+        }
+    }
 }
