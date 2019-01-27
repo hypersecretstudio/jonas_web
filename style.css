@@ -39,24 +39,28 @@ html {
 }
 
 /* SCROLLBAR */
+
 /* Let's get this party started */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-    background: #00f;  /* THIS IS IMPORTANT */
+    background: #000;
+    /* THIS IS IMPORTANT */
 }
 
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-    background: #0f0;
+    background: #fff;
     /* border: 1px solid rgb(0,0,0); */
     border: 3px solid transparent;
-    background-clip: content-box; 
+    background-clip: content-box;
 }
-
 
 body {
     font-family: 'sharpBook25', sans-serif;
@@ -68,6 +72,7 @@ body {
 /*
     header and footer section
 */
+
 .header, .footer {
     /* text-align: center; */
     position: fixed;
@@ -87,24 +92,29 @@ body {
     bottom: 0px;
     border-top: solid 3px #00f;
 }
-#project-clear, #project-latest, #project-random, #contact-me{
+
+#project-clear, #project-latest, #project-random, #contact-me {
     cursor: pointer;
     font-size: 30px;
     position: absolute;
     /* background-color: #00f; */
 }
-#project-clear:hover, #project-latest:hover, #project-random:hover, #contact-me:hover{
+
+#project-clear:hover, #project-latest:hover, #project-random:hover, #contact-me:hover {
     color: #f00;
     /* font-style: italic; */
 }
-#project-clear, #project-random{
+
+#project-clear, #project-random {
     left: 0px;
     padding-left: 5px;
 }
-#project-latest, #contact-me{
+
+#project-latest, #contact-me {
     right: 0px;
     padding-right: 5px;
 }
+
 /*
 end of header footer
 */
@@ -116,8 +126,14 @@ qui li cambi globalmente */
     position: fixed;
     width: 50%;
     height: calc(50% - 34px);
-    background: linear-gradient(45deg, #f99884, #84f9a1);
-    overflow-y: scroll;
+    /* background: linear-gradient(45deg, #f99884, #84f9a1); */
+    background: 
+    radial-gradient(circle at 50% 0, rgba(255, 0, 0, .5), 
+    rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, 
+    rgba(0, 0, 255, .5), rgba(0, 0, 255, 0) 70.71%), 
+    radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), 
+    rgba(0, 255, 0, 0) 70.71%) beige;
+    /* overflow-y: scroll; */
     z-index: 0;
     /* padding-bottom: 5px; */
     /* border: solid 3px #00f; */
@@ -152,8 +168,28 @@ qui li cambi globalmente */
 }
 
 .title {
-    /* height: 100%; */
-    padding-top: 3px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    /* height: 2rem; */
+    /* margin: 5px auto; */
+    /* height: 50%; */
+    /* padding-top: 3px; */
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+    /* background-color: #ccc; */
+    mix-blend-mode: exclusion;
+}
+.project-list{
+    /* position: absolute; */
+    top: 0px;
+    overflow-y: scroll;
+    height: 100%;
+    z-index: 1;
+    /* margin-top: 15%; */
+    /* padding-top: 15%; */
+    /* padding-bottom: 15%; */
 }
 /* questi sono i titoli dei progetti box bianchi */
 
@@ -325,7 +361,8 @@ qui li cambi globalmente */
     text-align: center;
     z-index: 999999999;
 }
-.idle-container{
+
+.idle-container {
     /* background-color: #f99884; */
     width: 7%;
     max-width: 45px;
@@ -333,34 +370,38 @@ qui li cambi globalmente */
     position: fixed;
     z-index: 99999999;
 }
-#idle, #idle-show{
+
+#idle, #idle-show {
     width: 100%;
     height: auto;
 }
-#idle{
+
+#idle {
     display: none;
 }
-#idle-show{
+
+#idle-show {
     display: block;
 }
-@media screen and (orientation:portrait) and (max-device-width : 900px){
-    #warning {
+
+@media screen and (orientation:portrait) and (max-device-width: 900px) {
+    /* #warning {
         display: block;
-    }
+    } */
 }
 
-@media only screen and (max-device-width : 900px) {
-    html{
+@media only screen and (max-device-width: 900px) {
+    html {
         font-size: 75%;
     }
-    .project-container{
+    .project-container {
         position: fixed;
         top: 0px;
-        left:0px;
+        left: 0px;
         width: 100%;
         height: 100
     }
-    .content{
+    .content {
         top: 50%;
         left: 50%;
         width: 95vw;

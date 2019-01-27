@@ -1,58 +1,19 @@
-// const wpcom = WPCOM();
-// const blog = wpcom.site('jonasgillman.wordpress.com');
-// const data = [];
-// blog.postsList({ number: 100 })
-//     .then(list => {
-//         console.log(list)
-//         for (const post of list.posts) {
-//             const content = {
-//                 "title": post.title,
-//                 "content": post.content,
-//                 "excerpt": post.excerpt,
-//                 "category": Object.keys(post.categories)[0],
-//                 "imgs": extractImgs(post.attachments)
-//             }
-//             data.push(content);
-//         }
-//         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
-//             let parent = currentValue.category;
-//             let child = currentValue.title;
-//             if (!accumulator[parent]) {
-//                 accumulator[parent] = {};
-//             }
-//             if (!accumulator[parent][child]) {
-//                 accumulator[parent][child] = [];
-//             }
-//             accumulator[parent][child] = {
-//                 text: currentValue.content,
-//                 short: currentValue.excerpt,
-//                 imgs: currentValue.imgs
-//             };
-//             return accumulator;
-//         }, {});
-//         console.log(web_content);
-//         render_web_page(web_content);
-//     })
-//     .catch(error => { console.error(error) });
-
-// function extractImgs(data) {
-//     const result = [];
-//     Object.keys(data).forEach(key => {
-//         result.push(data[key].URL);
-//     })
-//     console.log(result);
-//     return result;
-// }
-let data;
-
-const URL = 'wp.json';
-fetch(URL)
-    .then(response => {
-        return response.json();
-    })
-    .then(json => {
-        data = json.posts;
-        // console.log(data);
+const wpcom = WPCOM();
+const blog = wpcom.site('jonasgillman.wordpress.com');
+const data = [];
+blog.postsList({ number: 100 })
+    .then(list => {
+        console.log(list)
+        for (const post of list.posts) {
+            const content = {
+                "title": post.title,
+                "content": post.content,
+                "excerpt": post.excerpt,
+                "category": Object.keys(post.categories)[0],
+                "imgs": extractImgs(post.attachments)
+            }
+            data.push(content);
+        }
         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
             let parent = currentValue.category;
             let child = currentValue.title;
@@ -69,11 +30,50 @@ fetch(URL)
             };
             return accumulator;
         }, {});
-
         console.log(web_content);
         render_web_page(web_content);
     })
-    .catch(err => console.log(err))
+    .catch(error => { console.error(error) });
+
+function extractImgs(data) {
+    const result = [];
+    Object.keys(data).forEach(key => {
+        result.push(data[key].URL);
+    })
+    console.log(result);
+    return result;
+}
+// let data;
+
+// const URL = 'wp.json';
+// fetch(URL)
+//     .then(response => {
+//         return response.json();
+//     })
+//     .then(json => {
+//         data = json.posts;
+//         // console.log(data);
+//         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
+//             let parent = currentValue.category;
+//             let child = currentValue.title;
+//             if (!accumulator[parent]) {
+//                 accumulator[parent] = {};
+//             }
+//             if (!accumulator[parent][child]) {
+//                 accumulator[parent][child] = [];
+//             }
+//             accumulator[parent][child] = {
+//                 text: currentValue.content,
+//                 short: currentValue.excerpt,
+//                 imgs: currentValue.imgs
+//             };
+//             return accumulator;
+//         }, {});
+
+//         console.log(web_content);
+//         render_web_page(web_content);
+//     })
+//     .catch(err => console.log(err))
 let angle = 0;
 function render_web_page(content) {
 
@@ -87,7 +87,7 @@ function render_web_page(content) {
         small: '?w=300',
         thumbnail: '?w=150'
     };
-
+    const NS = "http://www.w3.org/2000/svg";
     let index = 1;
     let id_index = 0;
     const project_container = document.getElementById('project-container');
@@ -100,7 +100,12 @@ function render_web_page(content) {
         // here below we set the titles
         const regex = /\_/gi;
         const project_title = project.replace(regex, ' ').toUpperCase();
-        el_title.innerText = project_title;
+        // here below we do the SVG animation
+        // el_title.innerText = project_title;
+        // const text_path_id = '#text-path' + index;
+        // const text_path = document.querySelector(text_path_id);
+        // console.log(text_path);
+        // text_path.innerHTML = project_title;
         Object.keys(content[project]).forEach(title => {
             // here we do two things
             // create a div element with the content
@@ -187,7 +192,7 @@ function render_web_page(content) {
                 $(content_div).toggle('fast');
             }
             el_list.appendChild(list_element);
-            console.log(project, title)
+            console.log(project, title);
             id_index++;
         });
         index++;
@@ -219,6 +224,18 @@ function render_web_page(content) {
 
         const position = 'top: ' + y + 'px; left: ' + x + 'px;';
         head_div.setAttribute('style', position);
+
+
+        /*******************************
+         * 
+         * here we animate the svg path
+         * 
+         *******************************/
+        const rand_nums = [];
+        for (let i = 0; i < 22; i++)rand_nums.push(10 + Math.floor(Math.random() * 81));
+        const d = `M${rand_nums[0]},${rand_nums[1]} Q${rand_nums[2]},${rand_nums[3]} ${rand_nums[4]},${rand_nums[5]} Q${rand_nums[6]},${rand_nums[7]} ${rand_nums[8]},${rand_nums[9]} Q${rand_nums[10]},${rand_nums[11]} ${rand_nums[12]},${rand_nums[13]} Q${rand_nums[14]},${rand_nums[15]} ${rand_nums[16]},${rand_nums[17]} Q${rand_nums[18]},${rand_nums[19]} ${rand_nums[20]},${rand_nums[21]}`;
+        for (let i = 1; i <= 4; i++)document.getElementById('path' + i).setAttribute('d', d);
+
     }
 
 
@@ -235,7 +252,7 @@ function render_web_page(content) {
 
         close_all_divs()
     });
-    $('#project-random').click(()=>{
+    $('#project-random').click(() => {
         close_all_divs();
         const content_divs = document.getElementsByClassName('content');
         const random_idx = Math.floor(Math.random() * content_divs.length);
