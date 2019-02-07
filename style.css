@@ -49,7 +49,7 @@ html {
 /* Track */
 
 ::-webkit-scrollbar-track {
-    background: #000;
+    /* background: #000; */
     /* THIS IS IMPORTANT */
 }
 
@@ -58,7 +58,7 @@ html {
 ::-webkit-scrollbar-thumb {
     background: #fff;
     /* border: 1px solid rgb(0,0,0); */
-    border: 3px solid transparent;
+    /*border: 3px solid transparent;*/
     background-clip: content-box;
 }
 
@@ -79,25 +79,26 @@ body {
     height: 30px;
     left: 0px;
     width: 100%;
-    background-color: #0f0;
-    z-index: 5;
+    background-color: rgb(0, 17, 255);
 }
+
 
 .header {
     top: 0px;
     border-bottom: solid 3px #00f;
+    color: rgb(255, 255, 255);
 }
 
 .footer {
     bottom: 0px;
-    border-top: solid 3px #00f;
+    border-top: solid 3px rgb(0, 255, 34);
 }
 
 #project-clear, #project-latest, #project-random, #contact-me {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 28px;
     position: absolute;
-    /* background-color: #00f; */
+    color: rgb(255, 255, 255);
 }
 
 #project-clear:hover, #project-latest:hover, #project-random:hover, #contact-me:hover {
@@ -107,12 +108,14 @@ body {
 
 #project-clear, #project-random {
     left: 0px;
-    padding-left: 5px;
+    padding-left: 10px;
+    padding-top: 3px;
 }
 
 #project-latest, #contact-me {
     right: 0px;
-    padding-right: 5px;
+    padding-right: 10px;
+    padding-top: 3px;
 }
 
 /*
@@ -125,14 +128,8 @@ qui li cambi globalmente */
 #project1, #project2, #project3, #project4 {
     position: fixed;
     width: 50%;
-    height: calc(50% - 34px);
+    height: calc(50% - 31px);
     /* background: linear-gradient(45deg, #f99884, #84f9a1); */
-    background: 
-    radial-gradient(circle at 50% 0, rgba(255, 0, 0, .5), 
-    rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, 
-    rgba(0, 0, 255, .5), rgba(0, 0, 255, 0) 70.71%), 
-    radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), 
-    rgba(0, 255, 0, 0) 70.71%) beige;
     /* overflow-y: scroll; */
     z-index: 0;
     /* padding-bottom: 5px; */
@@ -141,56 +138,77 @@ qui li cambi globalmente */
 }
 
 #project1, #project2 {
-    top: 33px;
+    top: 30px;
 }
 
 #project3, #project4 {
     bottom: 33px;
-    border-top: solid 3px #00f;
+    /*border-top: solid 3px #00f; */
 }
 
 /* qui singolarmente */
 
 #project1 {
     left: 0px;
+    background: radial-gradient(circle at 50% 0, rgba(255, 0, 0, .5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 0, 255, .5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), rgba(0, 255, 0, 0) 70.71%) beige;
 }
 
 #project2 {
     right: 0px;
+    background: radial-gradient(circle at 50% 0, rgba(0, 255, 114, 0.5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 20, 255, 0.5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, 0.38), rgba(0, 255, 0, 0) 70.71%) #abe0d4;
 }
 
 #project3 {
     left: 0px;
+    background: radial-gradient(circle at 50% 0, rgba(255, 196, 0, 0.5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 255, 13, 0.5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), rgba(0, 255, 0, 0) 70.71%) beige;
 }
 
 #project4 {
     right: 0px;
+    background: radial-gradient(circle at 50% 0, rgba(255, 0, 0, .5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 0, 255, .5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), rgba(0, 255, 0, 0) 70.71%) beige;
 }
 
 .title {
     position: absolute;
+    display: inline-block;
     top: 0px;
-    width: 100%;
-    /* height: 2rem; */
-    /* margin: 5px auto; */
-    /* height: 50%; */
-    /* padding-top: 3px; */
+    width: min-content;
+    width: -moz-min-content;
+    width: -webkit-min-content;
+    width: -o-min-content;
+    text-align: right;
+    transform: rotate(-90deg) translate(-100%, 0%);
+    -moz-transform: rotate(-90deg) translate(-100%, 0%);
+    -webkit-transform: rotate(-90deg) translate(-100%, 0%);
+    -o-transform: rotate(-90deg) translate(-100%, 0%);
+    transform-origin: left top;
+    -moz-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -o-transform-origin: left top;
+    background-color: #0f0;
+    /* font-size: 16px; */
+    padding: 0.5rem;
     text-align: center;
     z-index: 2;
-    color: #fff;
+    color: rgb(0, 0, 0);
     /* background-color: #ccc; */
-    mix-blend-mode: exclusion;
+    /*mix-blend-mode: exclusion; */
 }
-.project-list{
+.title h1{
+    font-size: 1.3rem;
+}
+.project-list {
     /* position: absolute; */
-    top: 0px;
+    top: 30px;
     overflow-y: scroll;
     height: 100%;
     z-index: 1;
+    margin-left: 20%;
     /* margin-top: 15%; */
     /* padding-top: 15%; */
     /* padding-bottom: 15%; */
 }
+
 /* questi sono i titoli dei progetti box bianchi */
 
 .project-list div {
@@ -209,12 +227,12 @@ qui li cambi globalmente */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text; */
-    background-color: #fff;
+    /* background-color: #fff; */
     border: solid 3px #000;
     box-shadow: 3px 3px #00f;
     border-radius: 0px;
-    font-size: 1.75rem;
-    text-align: center;
+    font-size: 1.25rem;
+    text-align: left;
 }
 
 .project-list div:hover {
@@ -251,18 +269,18 @@ qui li cambi globalmente */
 }
 
 .content-text {
-    color: #fff;
-    font-family: 'larish', serif;
+    color: #000;
+    /*font-family: 'larish', serif; */
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    width: calc(100% - 10px);
+    width: calc(100% - 15px);
     position: relative;
     height: calc(100% - 63px);
-    background-color: #00f;
+    background-color: rgb(0, 255, 157);
     /* background-color: #84f9a1; */
     /*nice color*/
     overflow-y: scroll;
     hyphens: manual;
-    padding: 5px;
+    padding-left: 15px;
     /* word-break: break-all; */
 }
 
@@ -272,7 +290,7 @@ qui li cambi globalmente */
 }
 
 .content-header {
-    background-color: #fff;
+    background-color: rgb(0, 4, 255);
     width: 100%;
     height: 50px;
     border-bottom: solid 3px #000;
@@ -326,28 +344,35 @@ qui li cambi globalmente */
     /* overflow-x: scroll; */
 }
 
+.next-btn{
+    width: 100%;
+    text-align: center;
+    cursor: e-resize;
+    background-color: #f00;
+}
+
 .content-img img {
     display: block;
-    margin: 15px auto;
-    width: 15%;
+    margin: 0px auto;
+    width: 90%;
     max-width: 650px;
     height: auto;
     /* float: left; */
     /* margin-left: 5px; */
-    transform: rotate(180deg);
+    /* transform: rotate(180deg);
     transition-property: width, height, transform;
     transition-duration: 2s;
-    border: solid 3px #0f0;
+    border: solid 3px #0f0; */
     /* box-shadow: #fa0 5px 5px 5px; */
 }
 
-.content-img img:hover {
+/* .content-img img:hover {
     width: 90%;
     transform: rotate(0deg);
     height: auto;
     /* float: left; */
     /* margin-left: 5px; */
-}
+/* }  */
 
 .project-container {}
 
