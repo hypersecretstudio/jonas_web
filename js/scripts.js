@@ -215,41 +215,6 @@ function render_web_page(content) {
 
 }
 
-if (!is_device) {
-    // head animation
-    setInterval(() => {
-        // console.log(position);
-        const headImg = document.querySelector('.idle-container img');
-        const rotation = 'transform: rotate(' + angle + 'deg);';
-        headImg.setAttribute('style', rotation);
-        angle = (angle + 3) % 360;
-    }, 50);
-
-    window.onmousemove = (event) => {
-        let x = event.clientX + 10;
-        let y = event.clientY + 10;
-
-        const head_div = document.querySelector('.idle-container');
-
-        const bbox = head_div.getBoundingClientRect();
-        if (x > innerWidth / 2) x -= bbox.width + 10;
-        if (y > innerHeight / 2) y -= bbox.height + 10;
-
-        const position = 'top: ' + y + 'px; left: ' + x + 'px;';
-        head_div.setAttribute('style', position);
-
-    }
-
-
-    $('.function-buttons').hover((el) => {
-        const head_div = document.querySelector('img#idle');
-        head_div.setAttribute('id', 'idle-show')
-    }, (el) => {
-        const head_div = document.querySelector('img#idle-show');
-        head_div.setAttribute('id', 'idle')
-    });
-}
-
 
 // UTILS functions
 $('#project-clear').click(() => {

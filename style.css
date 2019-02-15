@@ -95,7 +95,7 @@ body {
 }
 
 #project-clear, #project-menu, #project-random, #contact-me {
-    cursor: pointer;
+    cursor: url('imgs/jo_icon.png'), auto;
     font-size: 28px;
     position: absolute;
     color: rgb(255, 255, 255);
@@ -251,7 +251,7 @@ qui li cambi globalmente */
 
 .project-list-element:hover {
     color: #00f;
-    cursor: pointer;
+    cursor: url('imgs/jo_icon.png'), auto;
     border-radius: 50px;
     box-shadow: 6px 6px #00f;
     background-color: #ff0;
@@ -278,7 +278,7 @@ qui li cambi globalmente */
 
 .persona:hover {
     color: #00f;
-    cursor: pointer;
+    cursor: url('imgs/jo_icon.png'), auto;
     border-radius: 50px;
     box-shadow: 6px 6px #00f;
     background-color: #ff0;
@@ -325,10 +325,10 @@ qui li cambi globalmente */
     /* word-break: break-all; */
 }
 
-.content-text img {
+/* .content-text img {
     width: 100%;
     height: auto;
-}
+} */
 
 .content-header {
     cursor: move;
@@ -390,9 +390,15 @@ qui li cambi globalmente */
     width: 100%;
     text-align: center;
     cursor: e-resize;
-    background-color: #f00;
+    background-color: rgba(0, 0, 255, .5) ;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    /* font-family: 'Courier New', Courier, monospace;
+     */
+     font-family: sharpBook25;
+     font-weight: 900;
 }
 
 .content-img img {
@@ -403,6 +409,8 @@ qui li cambi globalmente */
     height: auto;
     outline: solid 2px #0f0f;
     margin-bottom: 0.5rem;
+
+    border-radius: 7px;
     /* float: left; */
     /* margin-left: 5px; */
     /* transform: rotate(180deg);
