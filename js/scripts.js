@@ -194,6 +194,7 @@ function render_web_page(content) {
             // we need to append all the
             // titles of the the project as a list
             const list_element = document.createElement('div');
+            list_element.setAttribute('class', 'project-list-element')
             list_element.innerText = title;
             list_element.onclick = (event) => {
                 // when you click the list element

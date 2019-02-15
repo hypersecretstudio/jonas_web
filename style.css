@@ -217,12 +217,14 @@ qui li cambi globalmente */
 
 /* questi sono i titoli dei progetti box bianchi */
 
-.project-list div {
+.project-list-element {
     /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: 'Times New Roman', Times, serif; */
     font-weight: 100;
     float: left;
     width: -moz-min-content;
+    width: -o-min-content;
+    width: -webkit-min-content;
     width: min-content;
     margin: 0.5rem;
     padding: 1.2rem;
@@ -238,10 +240,10 @@ qui li cambi globalmente */
     box-shadow: 3px 3px #00f;
     border-radius: 0px;
     font-size: 1.25rem;
-    text-align: left;
+    /* text-align: left; */
 }
 
-.project-list div:hover {
+.project-list-element:hover {
     color: #00f;
     cursor: pointer;
     border-radius: 50px;
@@ -253,7 +255,31 @@ qui li cambi globalmente */
     /* font-family: 'Prompt', sans-serif;
     font-weight: 900; */
 }
-
+.persona{
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 1.2rem;
+    border: solid 3px #000;
+    box-shadow: 3px 3px #00f;
+    border-radius: 0px;
+    /* font-size: 1.25rem; */
+    text-align: center;
+    background: linear-gradient(0.5turn, #0ff, #ff0, #0f0, #f0f);
+    width: 75%;
+    line-height: 3rem;
+}
+.persona:hover {
+    color: #00f;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 6px 6px #00f;
+    background-color: #ff0;
+    /* font-style: italic; */
+    /* font-weight: 900; */
+    /* font-family: 'sharpBook20', sans-serif; */
+    /* font-family: 'Prompt', sans-serif;
+    font-weight: 900; */
+}
 .content {
     position: fixed;
     display: none;
