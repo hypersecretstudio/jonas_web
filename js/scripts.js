@@ -1,9 +1,16 @@
+// first we chack wether user is a device or a desktop
+let is_device = false;
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+    is_device = true;
+}
+console.log(is_device);
+
 const wpcom = WPCOM();
 const blog = wpcom.site('jonasgillman.wordpress.com');
 const data = [];
 blog.postsList({ number: 100 })
     .then(list => {
-        console.log(list)
+        console.log(list);
         for (const post of list.posts) {
             const content = {
                 "title": post.title,
@@ -173,10 +180,12 @@ function render_web_page(content) {
             if (window.innerWidth < 900) {
 
             } else {
-                const w = Math.floor(Math.random() * (innerWidth - 300));//correct this!
-                const h = Math.floor(Math.random() * innerHeight * 0.3);
-                content_div.style.top = h + 'px';
-                content_div.style.left = w + 'px';
+                const left = Math.floor(Math.random() * (innerWidth * 0.4));//correct this!
+                const top = Math.floor(Math.random() * (innerHeight * 0.3));
+                content_div.style.top = left + 'px';
+                content_div.style.left = top + 'px';
+                content_div.style.width = innerWidth * 0.5 + 'px';
+                content_div.style.height = innerHeight * 0.5 + 'px';
             }
             project_container.appendChild(content_div);//insert in the project container
             $(content_div).draggable();//make the divs draggable
@@ -203,7 +212,10 @@ function render_web_page(content) {
      */
 
 
+}
 
+if (!is_device) {
+    // head animation
     setInterval(() => {
         // console.log(position);
         const headImg = document.querySelector('.idle-container img');
@@ -225,19 +237,7 @@ function render_web_page(content) {
         const position = 'top: ' + y + 'px; left: ' + x + 'px;';
         head_div.setAttribute('style', position);
 
-
-        /*******************************
-         * 
-         * here we animate the svg path
-         * 
-         *******************************/
-        // const rand_nums = [];
-        // for (let i = 0; i < 22; i++)rand_nums.push(10 + Math.floor(Math.random() * 81));
-        // const d = `M${rand_nums[0]},${rand_nums[1]} Q${rand_nums[2]},${rand_nums[3]} ${rand_nums[4]},${rand_nums[5]} Q${rand_nums[6]},${rand_nums[7]} ${rand_nums[8]},${rand_nums[9]} Q${rand_nums[10]},${rand_nums[11]} ${rand_nums[12]},${rand_nums[13]} Q${rand_nums[14]},${rand_nums[15]} ${rand_nums[16]},${rand_nums[17]} Q${rand_nums[18]},${rand_nums[19]} ${rand_nums[20]},${rand_nums[21]}`;
-        // for (let i = 1; i <= 4; i++)document.getElementById('path' + i).setAttribute('d', d);
-
     }
-
 
 
     $('.function-buttons').hover((el) => {
@@ -247,21 +247,46 @@ function render_web_page(content) {
         const head_div = document.querySelector('img#idle-show');
         head_div.setAttribute('id', 'idle')
     });
+}
 
-    $('#project-clear').click(() => {
 
-        close_all_divs()
-    });
-    $('#project-random').click(() => {
-        close_all_divs();
-        const content_divs = document.getElementsByClassName('content');
-        const random_idx = Math.floor(Math.random() * content_divs.length);
-        content_divs[random_idx].style.display = 'block';
+// UTILS functions
+$('#project-clear').click(() => {
+    close_all_divs()
+});
+
+$('#project-random').click(() => {
+    close_all_divs();
+    const content_divs = document.getElementsByClassName('content');
+    const random_idx = Math.floor(Math.random() * content_divs.length);
+    content_divs[random_idx].style.display = 'block';
+})
+
+$('#project-menu').click(() => {
+    document.querySelector('div.nav-menu').style.display = 'flex';
+});
+
+// here we assign click listeners to navigate the different pages of the website
+const nav_menu = document.getElementsByClassName('nav-menu-element');
+for (const div of nav_menu) {
+    // const div_ref = div.attributes.name.value;
+    div.addEventListener('click', (event) => {
+        const projects = ['project1', 'project2', 'project3', 'project4']
+        const div_ref = div.attributes.name.value;
+        for(const project of projects){
+            const project_div = document.getElementById(project);
+            if(project === div_ref){
+                project_div.style.display = 'block';
+            }else{
+                project_div.style.display = 'none';
+            }
+        }
+        document.querySelector('div.nav-menu').style.display = 'none';
     })
+    // console.log(div.attributes.name.value)
 }
 
 function close_all_divs() {
-
     const open_divs = document.getElementsByClassName('content');
     for (const div of open_divs) {
         if (div.style.display === 'block') {

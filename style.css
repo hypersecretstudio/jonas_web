@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Prompt:100,500,900');
+/* @import url('https://fonts.googleapis.com/css?family=Prompt:100,500,900'); */
+
 @font-face {
     font-family: sharpBook20;
     src: url('fonts/SharpGrotesk-Book20.otf');
@@ -82,7 +83,6 @@ body {
     background-color: rgb(0, 17, 255);
 }
 
-
 .header {
     top: 0px;
     border-bottom: solid 3px #00f;
@@ -94,14 +94,14 @@ body {
     border-top: solid 3px rgb(0, 255, 34);
 }
 
-#project-clear, #project-latest, #project-random, #contact-me {
+#project-clear, #project-menu, #project-random, #contact-me {
     cursor: pointer;
     font-size: 28px;
     position: absolute;
     color: rgb(255, 255, 255);
 }
 
-#project-clear:hover, #project-latest:hover, #project-random:hover, #contact-me:hover {
+#project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
     color: #f00;
     /* font-style: italic; */
 }
@@ -112,10 +112,14 @@ body {
     padding-top: 3px;
 }
 
-#project-latest, #contact-me {
+#project-menu, #contact-me {
     right: 0px;
     padding-right: 10px;
     padding-top: 3px;
+}
+
+#project-menu{
+    display: none;
 }
 
 /*
@@ -194,9 +198,11 @@ qui li cambi globalmente */
     /* background-color: #ccc; */
     /*mix-blend-mode: exclusion; */
 }
-.title h1{
+
+.title h1 {
     font-size: 1.3rem;
 }
+
 .project-list {
     /* position: absolute; */
     top: 30px;
@@ -270,7 +276,7 @@ qui li cambi globalmente */
 
 .content-text {
     color: #000;
-    /*font-family: 'larish', serif; */
+    font-family: 'larish', serif;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     width: calc(100% - 15px);
     position: relative;
@@ -344,7 +350,7 @@ qui li cambi globalmente */
     /* overflow-x: scroll; */
 }
 
-.next-btn{
+.next-btn {
     width: 100%;
     text-align: center;
     cursor: e-resize;
@@ -371,7 +377,9 @@ qui li cambi globalmente */
     transform: rotate(0deg);
     height: auto;
     /* float: left; */
-    /* margin-left: 5px; */
+
+/* margin-left: 5px; */
+
 /* }  */
 
 .project-container {}
@@ -409,6 +417,42 @@ qui li cambi globalmente */
     display: block;
 }
 
+.nav-menu {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 100%; */
+    text-align: center;
+    min-height: 200px;
+    background-color: rgba(33, 33, 33, .3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 95%;
+    height: 95vh;
+    background-color: rgba(0, 0, 255, .5);
+    border: solid 3px #0f0;
+}
+
+.nav-menu-element {
+    cursor: pointer;
+    /* margin: 5% 0 5% 0;*/
+    font-size: 2rem;
+    padding: 1.5rem; 
+    color: #fff;
+    background-color: rgba(255, 0, 0, .5);
+    width: min-content;
+    width: -moz-min-content;
+    width: -webkit-min-content;
+    width: -o-min-content;
+}
+
 @media screen and (orientation:portrait) and (max-device-width: 900px) {
     /* #warning {
         display: block;
@@ -418,6 +462,23 @@ qui li cambi globalmente */
 @media only screen and (max-device-width: 900px) {
     html {
         font-size: 75%;
+    }
+    #project1, #project2, #project3, #project4 {
+        top: 30px;
+        left: 0px;
+        width: 100%;
+        height: calc(100% - 60px);
+    }
+    #project-clear, #project-menu, #project-random, #contact-me {
+        font-size: 15px;
+        top: 50%;
+        transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+    }
+    #project-menu{
+        display: block;
     }
     .project-container {
         position: fixed;
