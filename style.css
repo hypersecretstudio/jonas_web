@@ -99,6 +99,10 @@ body {
     font-size: 28px;
     position: absolute;
     color: rgb(255, 255, 255);
+    width: max-content;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: -o-max-content;
 }
 
 #project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
@@ -107,18 +111,20 @@ body {
 }
 
 #project-clear, #project-random {
-    left: 0px;
+    /* left: 0px; */
+    left: 50%;
+    transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
     padding-left: 10px;
     padding-top: 3px;
 }
 
-#project-menu, #contact-me {
+#project-menu {
     right: 0px;
     padding-right: 10px;
     padding-top: 3px;
-}
-
-#project-menu{
     display: none;
 }
 
@@ -153,12 +159,12 @@ qui li cambi globalmente */
 /* qui singolarmente */
 
 #project1 {
-    left: 0px;
+    right: 0px;
     background: radial-gradient(circle at 50% 0, rgba(255, 0, 0, .5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 0, 255, .5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, .5), rgba(0, 255, 0, 0) 70.71%) beige;
 }
 
 #project2 {
-    right: 0px;
+    left: 0px;
     background: radial-gradient(circle at 50% 0, rgba(0, 255, 114, 0.5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 20, 255, 0.5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, 0.38), rgba(0, 255, 0, 0) 70.71%) #abe0d4;
 }
 
@@ -255,7 +261,8 @@ qui li cambi globalmente */
     /* font-family: 'Prompt', sans-serif;
     font-weight: 900; */
 }
-.persona{
+
+.persona {
     font-size: 2rem;
     margin: 0.5rem;
     padding: 1.2rem;
@@ -268,6 +275,7 @@ qui li cambi globalmente */
     width: 75%;
     line-height: 3rem;
 }
+
 .persona:hover {
     color: #00f;
     cursor: pointer;
@@ -280,6 +288,7 @@ qui li cambi globalmente */
     /* font-family: 'Prompt', sans-serif;
     font-weight: 900; */
 }
+
 .content {
     position: fixed;
     display: none;
@@ -322,13 +331,13 @@ qui li cambi globalmente */
 }
 
 .content-header {
+    cursor: move;
     background-color: rgb(0, 4, 255);
     width: 100%;
     height: 50px;
     border-bottom: solid 3px #000;
     float: left;
 }
-
 .header-title {
     /* float: right; */
     font-family: 'sharpBook25', sans-serif;
@@ -372,6 +381,7 @@ qui li cambi globalmente */
 .content-img {
     width: 100%;
     height: auto;
+    margin-top: 1rem;
     /* text-align: center; */
     /* overflow-x: scroll; */
 }
@@ -381,6 +391,8 @@ qui li cambi globalmente */
     text-align: center;
     cursor: e-resize;
     background-color: #f00;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 
 .content-img img {
@@ -389,6 +401,8 @@ qui li cambi globalmente */
     width: 90%;
     max-width: 650px;
     height: auto;
+    outline: solid 2px #0f0f;
+    margin-bottom: 0.5rem;
     /* float: left; */
     /* margin-left: 5px; */
     /* transform: rotate(180deg);
@@ -470,7 +484,7 @@ qui li cambi globalmente */
     cursor: pointer;
     /* margin: 5% 0 5% 0;*/
     font-size: 2rem;
-    padding: 1.5rem; 
+    padding: 1.5rem;
     color: #fff;
     background-color: rgba(255, 0, 0, .5);
     width: min-content;
@@ -495,16 +509,26 @@ qui li cambi globalmente */
         width: 100%;
         height: calc(100% - 60px);
     }
-    #project-clear, #project-menu, #project-random, #contact-me {
+    #project-clear, #project-menu, #project-random {
         font-size: 15px;
         top: 50%;
+    }
+    #project-menu, #project-clear {
+        display: block;
         transform: translate(0, -50%);
         -moz-transform: translate(0, -50%);
         -o-transform: translate(0, -50%);
         -webkit-transform: translate(0, -50%);
     }
-    #project-menu{
-        display: block;
+    #project-clear {
+        left: 0px;
+    }
+    #project-random {
+
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
     }
     .project-container {
         position: fixed;
@@ -516,11 +540,14 @@ qui li cambi globalmente */
     .content {
         top: 50%;
         left: 50%;
-        width: 95vw;
-        height: 95vh;
+        width: 85vw;
+        height: 85vh;
         transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
+    }
+    .content-img img{
+        max-width: 300px;
     }
 }
