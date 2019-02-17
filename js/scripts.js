@@ -101,6 +101,7 @@ function render_web_page(content) {
     Object.keys(content).forEach(project => {
         // console.log(project);
         const el_id = '#project' + index; // here we define the selector for our element 
+        const class_name = 'gradient-bg' + index;
         const el = document.querySelector(el_id); // here we get the element
         const el_title = el.querySelector('.title'); // and the inner fields
         const el_list = el.querySelector('.project-list');
@@ -117,7 +118,8 @@ function render_web_page(content) {
             // here we do two things
             // create a div element with the content
             const content_div = document.createElement('div');
-            content_div.setAttribute('class', 'content');
+            content_div.setAttribute('class', class_name + ' content');
+            // content_div.setAttribute('class', class_name);
 
             // here we create the div containing the html text
             const content_text = document.createElement('div');
@@ -177,15 +179,25 @@ function render_web_page(content) {
             content_div.insertBefore(header, content_div.firstChild);//insert header
             const id_name = 'content' + id_index;
             content_div.setAttribute('id', id_name);
-            if (window.innerWidth < 900) {
-
-            } else {
-                const left = Math.floor(Math.random() * (innerWidth * 0.4));//correct this!
-                const top = Math.floor(Math.random() * (innerHeight * 0.3));
+            if (!is_device) {
+                const gutter = 50;
+                const w = innerWidth * 0.6;
+                const h = innerHeight * 0.7;
+                const left = Math.floor(gutter + Math.random() * (innerWidth - w - (2 * gutter)));//correct this!
+                const top = Math.floor(gutter + Math.random() * (innerHeight - h - (2 * gutter)));
                 content_div.style.top = left + 'px';
                 content_div.style.left = top + 'px';
-                content_div.style.width = innerWidth * 0.5 + 'px';
-                content_div.style.height = innerHeight * 0.5 + 'px';
+                content_div.style.width = w + 'px';
+                content_div.style.height = h + 'px';
+            }else{
+                const w = innerWidth * 0.85;
+                const h = innerHeight * 0.85;
+                const left = (innerWidth - w) / 2;
+                const top = (innerHeight - h) / 2;
+                content_div.style.top = left + 'px';
+                content_div.style.left = top + 'px';
+                content_div.style.width = w + 'px';
+                content_div.style.height = h + 'px';
             }
             project_container.appendChild(content_div);//insert in the project container
             $(content_div).draggable();//make the divs draggable
@@ -239,11 +251,11 @@ for (const div of nav_menu) {
     div.addEventListener('click', (event) => {
         const projects = ['project1', 'project2', 'project3', 'project4']
         const div_ref = div.attributes.name.value;
-        for(const project of projects){
+        for (const project of projects) {
             const project_div = document.getElementById(project);
-            if(project === div_ref){
+            if (project === div_ref) {
                 project_div.style.display = 'block';
-            }else{
+            } else {
                 project_div.style.display = 'none';
             }
         }
@@ -258,5 +270,21 @@ function close_all_divs() {
         if (div.style.display === 'block') {
             div.style.display = 'none';
         }
+    }
+}
+
+function adjust_content_div() {
+    const content = document.getElementsByClassName('content');
+    for (const content_div of content) {
+
+        const gutter = 50;
+        const w = innerWidth * 0.5;
+        const h = innerHeight * 0.5;
+        const left = Math.floor(gutter + (Math.random() * (innerWidth - w - (2 * gutter))));//correct this!
+        const top = Math.floor(gutter + (Math.random() * (innerHeight - h - (2 * gutter))));
+        content_div.style.top = left + 'px';
+        content_div.style.left = top + 'px';
+        content_div.style.width = w + 'px';
+        content_div.style.height = h + 'px';
     }
 }
