@@ -1,6 +1,6 @@
 // first we chack wether user is a device or a desktop
 let is_device = false;
-if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile|Kindle)/)) {
     is_device = true;
 }
 console.log(is_device);
