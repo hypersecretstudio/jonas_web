@@ -185,17 +185,19 @@ function render_web_page(content) {
                 const h = innerHeight * 0.7;
                 const left = Math.floor(gutter + Math.random() * (innerWidth - w - (2 * gutter)));//correct this!
                 const top = Math.floor(gutter + Math.random() * (innerHeight - h - (2 * gutter)));
-                content_div.style.top = left + 'px';
-                content_div.style.left = top + 'px';
+                content_div.style.top = top + 'px';
+                content_div.style.left = left + 'px';
                 content_div.style.width = w + 'px';
                 content_div.style.height = h + 'px';
             }else{
-                const w = innerWidth * 0.85;
-                const h = innerHeight * 0.85;
-                const left = (innerWidth - w) / 2;
-                const top = (innerHeight - h) / 2;
-                content_div.style.top = left + 'px';
-                content_div.style.left = top + 'px';
+                const w = Math.floor(innerWidth * 0.85);
+                const h = Math.floor(innerHeight * 0.85);
+                console.log(screen.width, screen.height, innerWidth, innerHeight)
+                const left = ((innerWidth - w) / 2);
+                const top = ((innerHeight - h) / 2);
+                console.log(left, window.devicePixelRatio)
+                content_div.style.top = top + 'px';
+                content_div.style.left = left + 'px';
                 content_div.style.width = w + 'px';
                 content_div.style.height = h + 'px';
             }

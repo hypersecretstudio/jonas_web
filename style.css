@@ -325,15 +325,16 @@ qui li cambi globalmente */
     font-family: 'larish', serif;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     width: calc(100% - 15px);
-    position: relative;
-    height: calc(100% - 63px);
+    position: absolute;
+    height: calc(100% - 50px);
     /* background-color: rgb(0, 255, 157); */
-    background-color: #ffffffa3;
-    /*nice color*/
+    /* background-color: #ffffffa3; */
     overflow-y: scroll;
     hyphens: manual;
     padding-left: 15px;
-    /* word-break: break-all; */
+    word-break: break-all;
+    z-index: -1;
+    padding-top: 50px;
 }
 
 div.content-text span {
@@ -351,11 +352,13 @@ div.content-text span {
 
 .content-header {
     cursor: move;
-    /*background-color: rgb(0, 4, 255);*/
+    background-color: rgb(0, 4, 255);
+    background-color: #ffffffa3;
     width: 100%;
     height: 50px;
     border-bottom: solid 3px #000;
     float: left;
+    z-index: 9;
 }
 
 .header-title {
@@ -411,7 +414,7 @@ div.content-text span {
     text-align: center;
     cursor: e-resize;
     background-color: #00f;
-    color:  #fff;
+    color: #fff;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     border-radius: 50px;
@@ -494,7 +497,7 @@ div.content-text span {
     /* width: 100%; */
     text-align: center;
     min-height: 200px;
-    background-color:#0000ffbf;
+    background-color: #0000ffbf;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -557,7 +560,7 @@ div.content-text span {
         transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-20%, -10%);
+        -webkit-transform: translate(-50%, -50%);
     }
     .project-container {
         position: fixed;
@@ -566,7 +569,7 @@ div.content-text span {
         width: 100%;
         height: 100
     }
-    .content {
+    /* .content {
         top: 50%;
         left: 50%;
         width: 85vw;
@@ -574,10 +577,10 @@ div.content-text span {
         transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-20%, -10%);
+        -webkit-transform: translate(-50%, -50%);
         resize: both;
         overflow: auto;
-    }
+    } */
     .content-img img {
         max-width: 300px;
     }
