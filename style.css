@@ -96,7 +96,7 @@ body {
 }
 
 #project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
-    color: #f00;
+    color: rgb(255, 0, 0);
     /* font-style: italic; */
 }
 
@@ -126,7 +126,7 @@ end of header footer
 qui li cambi globalmente */
 
 .gradient-bg1 {
-    background: radial-gradient(circle at 50% 0, #fdb0bf, rgba(45, 45, 206, 0) 70.71%), radial-gradient(circle at 93.3% 75%, #00ff007a, rgba(255, 104, 250, 0.6) 70.71%) beige;
+    background: radial-gradient(circle at 50% 0, #fdb0bf, rgba(45, 45, 206, 0) 70.71%), radial-gradient(circle at 93.3% 75%, #00ffb542, rgba(255, 104, 250, 0.6) 70.71%) beige;
 }
 
 .gradient-bg2 {
@@ -301,15 +301,15 @@ qui li cambi globalmente */
 }
 
 .content {
-    position: fixed;
+    position: fixed !important;
     display: none;
     top: 0px;
     left: 0px;
-    width: 300px;
+    /* width: 300px;
     height: 65vh;
     min-width: 300px;
     min-height: 250px;
-    max-height: 1200px;
+    max-height: 1200px; */
     border: solid 3px #000;
     /* background-color: #84f9a1; */
     box-shadow: 5px 5px #aaa;
@@ -328,7 +328,7 @@ qui li cambi globalmente */
     position: relative;
     height: calc(100% - 63px);
     /* background-color: rgb(0, 255, 157); */
-    /* background-color: #84f9a1; */
+    background-color: #ffffffa3;
     /*nice color*/
     overflow-y: scroll;
     hyphens: manual;
@@ -351,7 +351,7 @@ div.content-text span {
 
 .content-header {
     cursor: move;
-    background-color: rgb(0, 4, 255);
+    /*background-color: rgb(0, 4, 255);*/
     width: 100%;
     height: 50px;
     border-bottom: solid 3px #000;
@@ -364,7 +364,7 @@ div.content-text span {
     position: absolute;
     right: 0px;
     top: 25px;
-    text-align: left;
+    text-align: center;
     transform: translate(0, -12.5px);
     font-size: 0.9rem;
     width: calc(100% - 52px);
@@ -388,7 +388,7 @@ div.content-text span {
     border-radius: 50px;
     /* margin: 4px 0px 0px 4px; */
     box-shadow: 5px 5px #000;
-    background-color: #f00;
+    background-color: #00f;
     border: solid 2px #fff;
 }
 
@@ -410,7 +410,8 @@ div.content-text span {
     width: 100%;
     text-align: center;
     cursor: e-resize;
-    background-color: rgba(0, 0, 255, .5);
+    background-color: #00f;
+    color:  #fff;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     border-radius: 50px;
@@ -493,7 +494,7 @@ div.content-text span {
     /* width: 100%; */
     text-align: center;
     min-height: 200px;
-    background-color: rgba(33, 33, 33, .3);
+    background-color:#0000ffbf;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -503,8 +504,8 @@ div.content-text span {
     text-align: center;
     width: 95%;
     height: 95vh;
-    background-color: rgba(0, 0, 255, .5);
-    border: solid 3px #0f0;
+    /*background-color: rgba(16, 16, 16, 0.5);*/
+    /*border: solid 3px #0f0;*/
 }
 
 .nav-menu-element {
@@ -513,11 +514,13 @@ div.content-text span {
     font-size: 2rem;
     padding: 1.5rem;
     color: #fff;
-    background-color: rgba(255, 0, 0, .5);
+    margin-bottom: 5%;
+    /*background-color: rgba(255, 0, 0, .5);*/
     width: min-content;
     width: -moz-min-content;
     width: -webkit-min-content;
     width: -o-min-content;
+    border: solid;
 }
 
 @media screen and (orientation:portrait) and (max-device-width: 900px) {
@@ -554,7 +557,7 @@ div.content-text span {
         transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-20%, -10%);
     }
     .project-container {
         position: fixed;
@@ -571,7 +574,7 @@ div.content-text span {
         transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-20%, -10%);
         resize: both;
         overflow: auto;
     }
