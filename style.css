@@ -84,7 +84,7 @@ body {
     border-top: solid 3px #00f;
 }
 
-#project-clear, #project-menu, #project-random, #contact-me {
+#project-clear, #project-menu, #project-random, #contact-me, #impressum {
     cursor: url('imgs/jo_icon.png'), auto;
     font-size: 28px;
     position: absolute;
@@ -95,7 +95,7 @@ body {
     width: -o-max-content;
 }
 
-#project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
+#project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover,  #impressum:hover{
     color: #f00;
     /* font-style: italic; */
 }
@@ -111,13 +111,21 @@ body {
     padding-top: 3px;
 }
 
-#project-menu {
+#project-menu, #impressum {
     right: 0px;
     padding-right: 10px;
     padding-top: 3px;
     display: none;
 }
-
+#impressum{
+    display: block;
+    font-size: 0.75rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+}
 /*
 end of header footer
 */

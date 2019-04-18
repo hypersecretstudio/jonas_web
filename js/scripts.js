@@ -273,6 +273,8 @@ function close_all_divs() {
     }
 }
 
+$('#impressum').hover()// make the function to handle hover event and also for click event on devices
+
 function adjust_content_div() {
     const content = document.getElementsByClassName('content');
     for (const content_div of content) {
