@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: larish;
-    src: url('fonts/larish_neue_semibold.otf');
+    src: url('fonts/Chapter-Regular.otf');
 }
 
 html {
@@ -38,6 +38,8 @@ html {
 }
 
 /* Track */
+
+
 
 ::-webkit-scrollbar-track {
     /* background: #000; */
@@ -95,8 +97,8 @@ body {
     width: -o-max-content;
 }
 
-#project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover,  #impressum:hover{
-    color: #f00;
+#project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
+    color: rgb(255, 0, 0);
     /* font-style: italic; */
 }
 
@@ -130,11 +132,12 @@ body {
 end of header footer
 */
 
+
 /* questo qua sotto sone i 4 div
 qui li cambi globalmente */
 
 .gradient-bg1 {
-    background: radial-gradient(circle at 50% 0, #fdb0bf, rgba(45, 45, 206, 0) 70.71%), radial-gradient(circle at 93.3% 75%, #00ff007a, rgba(255, 104, 250, 0.6) 70.71%) beige;
+    background: radial-gradient(circle at 50% 0, #fdb0bf, rgba(45, 45, 206, 0) 70.71%), radial-gradient(circle at 93.3% 75%, #00ffb542, rgba(255, 104, 250, 0.6) 70.71%) beige;
 }
 
 .gradient-bg2 {
@@ -197,6 +200,8 @@ qui li cambi globalmente */
     right: 0px;
 }
 
+
+
 .title {
     position: absolute;
     display: inline-block;
@@ -225,9 +230,12 @@ qui li cambi globalmente */
 }
 
 .title h1 {
-    font-size: 1.7rem;
+    /* font-size: 1.7rem;*/
+    font-size: 3.7vh;
 }
-
+.title h1  {
+    
+}
 .project-list {
     /* position: absolute; */
     top: 30px;
@@ -260,9 +268,9 @@ qui li cambi globalmente */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text; */
-    /* background-color: #fff; */
+    background-color: #ffffff6b; 
     border: solid 3px #000;
-    /*box-shadow: 3px 3px #00f;*/
+    box-shadow: 3px 3px #00f;
     border-radius: 0px;
     font-size: 1.45rem;
     /* text-align: left; */
@@ -309,15 +317,15 @@ qui li cambi globalmente */
 }
 
 .content {
-    position: fixed;
+    position: fixed !important;
     display: none;
     top: 0px;
     left: 0px;
-    width: 300px;
+    /* width: 300px;
     height: 65vh;
     min-width: 300px;
     min-height: 250px;
-    max-height: 1200px;
+    max-height: 1200px; */
     border: solid 3px #000;
     /* background-color: #84f9a1; */
     box-shadow: 5px 5px #aaa;
@@ -333,15 +341,19 @@ qui li cambi globalmente */
     font-family: 'larish', serif;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
     width: calc(100% - 15px);
-    position: relative;
-    height: calc(100% - 63px);
+    position: absolute;
+    height: calc(100% - 50px);
     /* background-color: rgb(0, 255, 157); */
-    /* background-color: #84f9a1; */
-    /*nice color*/
+    /* background-color: #ffffffa3; */
     overflow-y: scroll;
-    hyphens: manual;
+    /*hyphens: auto;*/
+    text-align: left;
+    font-size: 113%;
+    line-height:136%;
     padding-left: 15px;
-    /* word-break: break-all; */
+    /*word-break: break-all;*/
+    z-index: -1;
+    padding-top: 50px;
 }
 
 div.content-text span {
@@ -360,10 +372,12 @@ div.content-text span {
 .content-header {
     cursor: move;
     background-color: rgb(0, 4, 255);
+    background-color: #ffffffa3;
     width: 100%;
     height: 50px;
     border-bottom: solid 3px #000;
     float: left;
+    z-index: 9;
 }
 
 .header-title {
@@ -372,7 +386,7 @@ div.content-text span {
     position: absolute;
     right: 0px;
     top: 25px;
-    text-align: left;
+    text-align: center;
     transform: translate(0, -12.5px);
     font-size: 0.9rem;
     width: calc(100% - 52px);
@@ -396,7 +410,7 @@ div.content-text span {
     border-radius: 50px;
     /* margin: 4px 0px 0px 4px; */
     box-shadow: 5px 5px #000;
-    background-color: #f00;
+    background-color: #00f;
     border: solid 2px #fff;
 }
 
@@ -418,7 +432,8 @@ div.content-text span {
     width: 100%;
     text-align: center;
     cursor: e-resize;
-    background-color: rgba(0, 0, 255, .5);
+    background-color: #00f;
+    color: #fff;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     border-radius: 50px;
@@ -459,6 +474,23 @@ div.content-text span {
 
 .project-container {}
 
+/* qui le modifiche del testo di kontakt  */
+
+#konta1 {
+    margin: 2% auto;
+    font-size: 1.45rem;    
+}
+
+#konta2 {
+    margin: 2% auto;
+    font-size: 1.2rem;
+   /* hyphens: auto; */
+      /*text-align: justify;*/
+    margin-right: 4%; 
+    line-height: 130% 
+}
+
+
 #warning {
     display: none;
     position: fixed;
@@ -498,10 +530,11 @@ div.content-text span {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     /* width: 100%; */
     text-align: center;
     min-height: 200px;
-    background-color: rgba(33, 33, 33, .3);
+    background-color: #0000ffbf;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -509,10 +542,10 @@ div.content-text span {
     -o-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     text-align: center;
-    width: 95%;
-    height: 95vh;
-    background-color: rgba(0, 0, 255, .5);
-    border: solid 3px #0f0;
+    width: 100%;
+    height: 92vh;
+    /*background-color: rgba(16, 16, 16, 0.5);*/
+    /*border: solid 3px #0f0;*/
 }
 
 .nav-menu-element {
@@ -521,11 +554,17 @@ div.content-text span {
     font-size: 2rem;
     padding: 1.5rem;
     color: #fff;
-    background-color: rgba(255, 0, 0, .5);
+    margin-bottom: 5%;
+    /*background-color: rgba(255, 0, 0, .5);*/
     width: min-content;
     width: -moz-min-content;
     width: -webkit-min-content;
     width: -o-min-content;
+    border: solid;
+}
+
+a:link {
+    color: #fff;
 }
 
 @media screen and (orientation:portrait) and (max-device-width: 900px) {
@@ -566,12 +605,13 @@ div.content-text span {
     }
     .project-container {
         position: fixed;
+        font-size: 85%;
         top: 0px;
         left: 0px;
         width: 100%;
-        height: 100
+        height: 100;
     }
-    .content {
+    /* .content {
         top: 50%;
         left: 50%;
         width: 85vw;
@@ -582,8 +622,11 @@ div.content-text span {
         -webkit-transform: translate(-50%, -50%);
         resize: both;
         overflow: auto;
-    }
+    } */
     .content-img img {
         max-width: 300px;
     }
 }
+
+
+   
