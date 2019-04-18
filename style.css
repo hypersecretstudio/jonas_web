@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: larish;
-    src: url('fonts/larish_neue_semibold.otf');
+    src: url('fonts/Chapter-Regular.otf');
 }
 
 html {
@@ -38,6 +38,8 @@ html {
 }
 
 /* Track */
+
+
 
 ::-webkit-scrollbar-track {
     /* background: #000; */
@@ -122,6 +124,7 @@ body {
 end of header footer
 */
 
+
 /* questo qua sotto sone i 4 div
 qui li cambi globalmente */
 
@@ -189,6 +192,8 @@ qui li cambi globalmente */
     right: 0px;
 }
 
+
+
 .title {
     position: absolute;
     display: inline-block;
@@ -217,9 +222,12 @@ qui li cambi globalmente */
 }
 
 .title h1 {
-    font-size: 1.7rem;
+    /* font-size: 1.7rem;*/
+    font-size: 3.7vh;
 }
-
+.title h1  {
+    
+}
 .project-list {
     /* position: absolute; */
     top: 30px;
@@ -252,9 +260,9 @@ qui li cambi globalmente */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text; */
-    /* background-color: #fff; */
+    background-color: #ffffff6b; 
     border: solid 3px #000;
-    /*box-shadow: 3px 3px #00f;*/
+    box-shadow: 3px 3px #00f;
     border-radius: 0px;
     font-size: 1.45rem;
     /* text-align: left; */
@@ -330,9 +338,12 @@ qui li cambi globalmente */
     /* background-color: rgb(0, 255, 157); */
     /* background-color: #ffffffa3; */
     overflow-y: scroll;
-    hyphens: manual;
+    /*hyphens: auto;*/
+    text-align: left;
+    font-size: 113%;
+    line-height:136%;
     padding-left: 15px;
-    word-break: break-all;
+    /*word-break: break-all;*/
     z-index: -1;
     padding-top: 50px;
 }
@@ -455,6 +466,23 @@ div.content-text span {
 
 .project-container {}
 
+/* qui le modifiche del testo di kontakt  */
+
+#konta1 {
+    margin: 2% auto;
+    font-size: 1.45rem;    
+}
+
+#konta2 {
+    margin: 2% auto;
+    font-size: 1.2rem;
+   /* hyphens: auto; */
+      /*text-align: justify;*/
+    margin-right: 4%; 
+    line-height: 130% 
+}
+
+
 #warning {
     display: none;
     position: fixed;
@@ -505,8 +533,8 @@ div.content-text span {
     -o-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     text-align: center;
-    width: 95%;
-    height: 95vh;
+    width: 100%;
+    height: 92vh;
     /*background-color: rgba(16, 16, 16, 0.5);*/
     /*border: solid 3px #0f0;*/
 }
@@ -524,6 +552,10 @@ div.content-text span {
     width: -webkit-min-content;
     width: -o-min-content;
     border: solid;
+}
+
+a:link {
+    color: #fff;
 }
 
 @media screen and (orientation:portrait) and (max-device-width: 900px) {
@@ -564,10 +596,11 @@ div.content-text span {
     }
     .project-container {
         position: fixed;
+        font-size: 85%;
         top: 0px;
         left: 0px;
         width: 100%;
-        height: 100
+        height: 100;
     }
     /* .content {
         top: 50%;
@@ -585,3 +618,6 @@ div.content-text span {
         max-width: 300px;
     }
 }
+
+
+   
