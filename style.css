@@ -86,7 +86,7 @@ body {
     border-top: solid 3px #00f;
 }
 
-#project-clear, #project-menu, #project-random, #contact-me, #impressum {
+#project-clear, #project-menu, #project-random, #contact-me {
     cursor: url('imgs/jo_icon.png'), auto;
     font-size: 28px;
     position: absolute;
@@ -113,25 +113,31 @@ body {
     padding-top: 3px;
 }
 
-#project-menu, #impressum {
+#project-menu {
     right: 0px;
     padding-right: 10px;
     padding-top: 3px;
     display: none;
 }
-#impressum{
-    display: block;
-    font-size: 0.75rem;
-    top: 50%;
-    transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-}
+
 /*
 end of header footer
 */
+#impressum{
+    display: block;
+    font-size: 0.71rem;
+    top: 48%;
+    transform: translate(-51%, 0);
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(96.2%, 12%);
+    -o-transform: translate(-50%, 0);
+    color: #ffffff;
+    text-decoration: none;
+}
 
+#impressum:hover{
+color: rgb(0, 255, 0);
+}
 
 /* questo qua sotto sone i 4 div
 qui li cambi globalmente */
@@ -233,9 +239,7 @@ qui li cambi globalmente */
     /* font-size: 1.7rem;*/
     font-size: 3.7vh;
 }
-.title h1  {
-    
-}
+
 .project-list {
     /* position: absolute; */
     top: 30px;
@@ -472,7 +476,7 @@ div.content-text span {
 
 /* }  */
 
-.project-container {}
+
 
 /* qui le modifiche del testo di kontakt  */
 
@@ -529,8 +533,9 @@ div.content-text span {
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-content: space-around;
     /* width: 100%; */
     text-align: center;
     min-height: 200px;
@@ -550,7 +555,7 @@ div.content-text span {
 
 .nav-menu-element {
     cursor: pointer;
-    /* margin: 5% 0 5% 0;*/
+    margin: 1rem;
     font-size: 2rem;
     padding: 1.5rem;
     color: #fff;
@@ -571,6 +576,12 @@ a:link {
     /* #warning {
         display: block;
     } */
+
+
+
+    .nav-menu{
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-device-width: 900px) {
@@ -598,14 +609,14 @@ a:link {
         left: 0px;
     }
     #project-random {
-        transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
+        transform: translate(-95%, -55%);
+       -moz-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-85%, -50%);
     }
     .project-container {
         position: fixed;
-        font-size: 85%;
+        font-size: 90%;
         top: 0px;
         left: 0px;
         width: 100%;
@@ -626,7 +637,22 @@ a:link {
     .content-img img {
         max-width: 300px;
     }
+    #impressum{
+        display: block;
+        font-size: 0.75rem;
+        top: 50%;
+        transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -webkit-transform: translate(88%, 30%);
+        -o-transform: translate(-50%, 0);
+        color: #ffffff;
+
+
+    }
+    #impressum:hover{
+        color: rgb(0, 255, 0);
+        }
 }
 
 
-   
+

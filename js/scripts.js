@@ -143,7 +143,7 @@ function render_web_page(content) {
                 content_imgs.appendChild(img);
                 // here we do the next button that changes the images on click
                 const next_img = document.createElement('div');
-                next_img.innerText = 'NEXT IMAGE ⏭';
+                next_img.innerText = 'NEXT IMAGE >';
 
                 let img_idx = 0;
                 next_img.addEventListener('click', (event) => {
@@ -181,8 +181,8 @@ function render_web_page(content) {
             content_div.setAttribute('id', id_name);
             if (!is_device) {
                 const gutter = 50;
-                const w = innerWidth * 0.6;
-                const h = innerHeight * 0.7;
+                const w = innerWidth * 0.52;
+                const h = innerHeight * 0.83;
                 const left = Math.floor(gutter + Math.random() * (innerWidth - w - (2 * gutter)));//correct this!
                 const top = Math.floor(gutter + Math.random() * (innerHeight - h - (2 * gutter)));
                 content_div.style.top = top + 'px';
@@ -226,7 +226,13 @@ function render_web_page(content) {
      * in the webpage
      */
 
-
+    
+    const iframes = document.getElementsByTagName('iframe');
+    console.log(iframes);
+    for (const iframe of iframes) {
+        console.log(iframe);
+        iframe.setAttribute('width', '100%');
+    }
 }
 
 
