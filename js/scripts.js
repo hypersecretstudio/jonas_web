@@ -50,37 +50,9 @@ function extractImgs(data) {
     // console.log(result);
     return result;
 }
-// let data;
 
-// const URL = 'wp.json';
-// fetch(URL)
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(json => {
-//         data = json.posts;
-//         // console.log(data);
-//         const web_content = data.reduce((accumulator, currentValue, currentIndex, array) => {
-//             let parent = currentValue.category;
-//             let child = currentValue.title;
-//             if (!accumulator[parent]) {
-//                 accumulator[parent] = {};
-//             }
-//             if (!accumulator[parent][child]) {
-//                 accumulator[parent][child] = [];
-//             }
-//             accumulator[parent][child] = {
-//                 text: currentValue.content,
-//                 short: currentValue.excerpt,
-//                 imgs: currentValue.imgs
-//             };
-//             return accumulator;
-//         }, {});
 
-//         console.log(web_content);
-//         render_web_page(web_content);
-//     })
-//     .catch(err => console.log(err))
+
 let angle = 0;
 function render_web_page(content) {
 
@@ -94,15 +66,15 @@ function render_web_page(content) {
         small: '?w=300',
         thumbnail: '?w=150'
     };
-    const NS = "http://www.w3.org/2000/svg";
     let index = 1;
     let id_index = 0;
     const project_container = document.getElementById('project-container');
     Object.keys(content).forEach(project => {
-        // console.log(project);
-        const el_id = '#project' + index; // here we define the selector for our element 
+        console.log(project);
+        const el_id = '#' + project; // here we define the selector for our element 
         const class_name = 'gradient-bg' + index;
         const el = document.querySelector(el_id); // here we get the element
+        console.log(el);
         const el_title = el.querySelector('.title'); // and the inner fields
         const el_list = el.querySelector('.project-list');
         // here below we set the titles
@@ -115,6 +87,7 @@ function render_web_page(content) {
         // console.log(text_path);
         // text_path.innerHTML = project_title;
         Object.keys(content[project]).forEach(title => {
+            console.log(project, title);
             // here we do two things
             // create a div element with the content
             const content_div = document.createElement('div');
@@ -139,7 +112,14 @@ function render_web_page(content) {
                 content_imgs.setAttribute('class', 'content-img');
                 const img = document.createElement('img');
                 img.setAttribute('src', img_urls[0]);
-                img.setAttribute('id', img_id)
+                img.setAttribute('id', img_id);
+
+                img.addEventListener('click', (event) => {
+                    img_idx++
+                    if (img_idx >= img_urls.length) img_idx = 0;
+                    img.setAttribute('src', img_urls[img_idx]);
+                });
+
                 content_imgs.appendChild(img);
                 // here we do the next button that changes the images on click
                 const next_img = document.createElement('div');
@@ -189,7 +169,7 @@ function render_web_page(content) {
                 content_div.style.left = left + 'px';
                 content_div.style.width = w + 'px';
                 content_div.style.height = h + 'px';
-            }else{
+            } else {
                 const w = Math.floor(innerWidth * 0.85);
                 const h = Math.floor(innerHeight * 0.85);
                 console.log(screen.width, screen.height, innerWidth, innerHeight)
@@ -214,6 +194,8 @@ function render_web_page(content) {
                 // when you click the list element
                 // it shows hides the content of the project
                 $(content_div).toggle('fast');
+
+                content_text.scrollTo(0, 0);
             }
             el_list.appendChild(list_element);
             // console.log(project, title);
@@ -226,11 +208,12 @@ function render_web_page(content) {
      * in the webpage
      */
 
-    
+
     const iframes = document.getElementsByTagName('iframe');
+    const srcs = 0;
     console.log(iframes);
     for (const iframe of iframes) {
-        console.log(iframe);
+        console.log(iframe.src);
         iframe.setAttribute('width', '100%');
     }
 }

@@ -125,12 +125,14 @@ end of header footer
 */
 #impressum{
     display: block;
+    position: absolute;
     font-size: 0.71rem;
-    top: 48%;
-    transform: translate(-51%, 0);
-    -moz-transform: translate(-50%, 0);
-    -webkit-transform: translate(96.2%, 12%);
-    -o-transform: translate(-50%, 0);
+    top: 50%;
+    right: 0px;
+    transform: translate(-12.5%, -50%);
+    -moz-transform: translate(-12.5%, -50%);
+    -webkit-transform: translate(-12.5%, -50%);
+    -o-transform: translate(-12.5%, -50%);
     color: #ffffff;
     text-decoration: none;
 }
@@ -158,7 +160,7 @@ qui li cambi globalmente */
     background: radial-gradient(circle at 50% 0, rgba(121, 251, 55, 0.74), rgba(16, 184, 249, 0.6) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(234, 255, 57, 0.85), rgba(241, 211, 39, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(234, 21, 21, 0.28), rgba(200, 250, 108, 0) 70.71%) rgb(255, 241, 224);
 }
 
-#project1, #project2, #project3, #project4 {
+#eigene_projekte, #formate_und_vermittlung, #kontakt, #dramaturgien {
     position: fixed;
     width: 50%;
     height: calc(50% - 31px);
@@ -171,11 +173,11 @@ qui li cambi globalmente */
     /* background-color: rgb(235, 100, 225) */
 }
 
-#project1, #project3 {
+#eigene_projekte, #formate_und_vermittlung {
     top: 30px;
 }
 
-#project2, #project4 {
+#dramaturgien, #kontakt {
     bottom: 33px;
     /*border-top: solid 3px #00f; */
 }
@@ -184,25 +186,25 @@ qui li cambi globalmente */
 
 /*eigene projeckte*/
 
-#project1 {
+#eigene_projekte {
     left: 0px;
 }
 
 /*drama*/
 
-#project2 {
+#dramaturgien {
     left: 0px;
 }
 
 /*formate und verm*/
 
-#project3 {
+#formate_und_vermittlung {
     right: 0px;
 }
 
 /*kontakt*/
 
-#project4 {
+#kontakt {
     right: 0px;
 }
 
@@ -588,7 +590,7 @@ a:link {
     html {
         font-size: 75%;
     }
-    #project1, #project2, #project3, #project4 {
+    #eigene_projekte, #formate_und_vermittlung, #kontakt, #dramaturgien {
         top: 30px;
         left: 0px;
         width: 100%;
@@ -638,13 +640,16 @@ a:link {
         max-width: 300px;
     }
     #impressum{
-        display: block;
+        /* display: block;
+        position: absolute;
         font-size: 0.75rem;
         top: 50%;
-        transform: translate(-50%, 0);
-        -moz-transform: translate(-50%, 0);
-        -webkit-transform: translate(88%, 30%);
-        -o-transform: translate(-50%, 0);
+        right: 0px;
+        /* margin-right: 1rem; */
+        /* transform: translate(-80%, -50%);
+        -moz-transform: translate(-80%, -50%);
+        -webkit-transform: translate(-80%, -50%);
+        -o-transform: translate(-80%, -50%);  */
         color: #ffffff;
 
 
