@@ -98,7 +98,7 @@ body {
 }
 
 #project-clear:hover, #project-menu:hover, #project-random:hover, #contact-me:hover {
-    color: rgb(255, 0, 0);
+    color: #0f0;
     /* font-style: italic; */
 }
 
@@ -356,7 +356,7 @@ qui li cambi globalmente */
     text-align: left;
     font-size: 113%;
     line-height:136%;
-    padding-left: 15px;
+    padding-left: 12px;
     /*word-break: break-all;*/
     z-index: -1;
     padding-top: 50px;
