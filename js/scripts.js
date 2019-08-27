@@ -240,7 +240,7 @@ const nav_menu = document.getElementsByClassName('nav-menu-element');
 for (const div of nav_menu) {
     // const div_ref = div.attributes.name.value;
     div.addEventListener('click', (event) => {
-        const projects = ['project1', 'project2', 'project3', 'project4']
+        const projects = ['dramaturgien', 'eigene_projekte', 'formate_und_vermittlung', 'kontakt']
         const div_ref = div.attributes.name.value;
         for (const project of projects) {
             const project_div = document.getElementById(project);
