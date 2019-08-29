@@ -10,7 +10,6 @@ const blog = wpcom.site('jonasgillman.wordpress.com');
 const data = [];
 blog.postsList({ number: 100 })
     .then(list => {
-        console.log(list);
         for (const post of list.posts) {
             const content = {
                 "title": post.title,
@@ -37,7 +36,6 @@ blog.postsList({ number: 100 })
             };
             return accumulator;
         }, {});
-        console.log(web_content);
         render_web_page(web_content);
     })
     .catch(error => { console.error(error) });
@@ -70,11 +68,9 @@ function render_web_page(content) {
     let id_index = 0;
     const project_container = document.getElementById('project-container');
     Object.keys(content).forEach(project => {
-        console.log(project);
         const el_id = '#' + project; // here we define the selector for our element 
         const class_name = 'gradient-bg' + index;
         const el = document.querySelector(el_id); // here we get the element
-        console.log(el);
         const el_title = el.querySelector('.title'); // and the inner fields
         const el_list = el.querySelector('.project-list');
         // here below we set the titles
@@ -87,7 +83,6 @@ function render_web_page(content) {
         // console.log(text_path);
         // text_path.innerHTML = project_title;
         Object.keys(content[project]).forEach(title => {
-            console.log(project, title);
             // here we do two things
             // create a div element with the content
             const content_div = document.createElement('div');
@@ -151,7 +146,18 @@ function render_web_page(content) {
             // if device we make only close button
             const close_btn = document.createElement('div');
             close_btn.setAttribute('class', 'close-button');
-            close_btn.onclick = () => $(content_div).toggle('fast');
+            close_btn.onclick = function () {
+                const G_parent = this.parentNode.parentNode.parentNode;
+                
+                console.log($(G_parent).find('iframe'));
+                const iframe = $(G_parent).find('iframe')[0];
+                if(iframe){
+                    const src = iframe.src;
+                    iframe.src = '';
+                    iframe.src = src;
+                }
+                $(content_div).toggle('fast')
+            };
             header_btns.appendChild(close_btn);
 
             header.insertBefore(header_btns, header.firstChild);//insert buttons
