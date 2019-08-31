@@ -586,6 +586,29 @@ a:link {
     }
 }
 
+.wrong-page{
+
+    width: 100%;
+    height: 100vh;
+    font-size: 3rem;
+    text-align: center;
+}
+.wrong-page p{
+    padding: 3rem;
+    border: solid 3px #000;
+    box-shadow: #00f 5px 5px;
+}
+.center-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+
+
 @media only screen and (max-device-width: 900px) {
     html {
         font-size: 75%;
