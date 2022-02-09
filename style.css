@@ -39,8 +39,6 @@ html {
 
 /* Track */
 
-
-
 ::-webkit-scrollbar-track {
     /* background: #000; */
     /* THIS IS IMPORTANT */
@@ -123,7 +121,8 @@ body {
 /*
 end of header footer
 */
-#impressum{
+
+#impressum {
     display: block;
     position: absolute;
     font-size: 0.71rem;
@@ -137,8 +136,8 @@ end of header footer
     text-decoration: none;
 }
 
-#impressum:hover{
-color: rgb(0, 255, 0);
+#impressum:hover {
+    color: rgb(0, 255, 0);
 }
 
 /* questo qua sotto sone i 4 div
@@ -208,8 +207,6 @@ qui li cambi globalmente */
     right: 0px;
 }
 
-
-
 .title {
     position: absolute;
     display: inline-block;
@@ -274,7 +271,7 @@ qui li cambi globalmente */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text; */
-    background-color: #ffffff6b; 
+    background-color: #ffffff6b;
     border: solid 3px #000;
     box-shadow: 3px 3px #00f;
     border-radius: 0px;
@@ -355,7 +352,7 @@ qui li cambi globalmente */
     /*hyphens: auto;*/
     text-align: left;
     font-size: 113%;
-    line-height:136%;
+    line-height: 136%;
     padding-left: 12px;
     /*word-break: break-all;*/
     z-index: -1;
@@ -478,24 +475,21 @@ div.content-text span {
 
 /* }  */
 
-
-
 /* qui le modifiche del testo di kontakt  */
 
 #konta1 {
     margin: 2% auto;
-    font-size: 1.45rem;    
+    font-size: 1.45rem;
 }
 
 #konta2 {
     margin: 2% auto;
     font-size: 1.2rem;
-   /* hyphens: auto; */
-      /*text-align: justify;*/
-    margin-right: 4%; 
-    line-height: 130% 
+    /* hyphens: auto; */
+    /*text-align: justify;*/
+    margin-right: 4%;
+    line-height: 130%
 }
-
 
 #warning {
     display: none;
@@ -574,30 +568,19 @@ a:link {
     color: #fff;
 }
 
-@media screen and (orientation:portrait) and (max-device-width: 900px) {
-    /* #warning {
-        display: block;
-    } */
-
-
-
-    .nav-menu{
-        flex-direction: column;
-    }
-}
-
-.wrong-page{
-
+.wrong-page {
     width: 100%;
     height: 100vh;
     font-size: 3rem;
     text-align: center;
 }
-.wrong-page p{
+
+.wrong-page p {
     padding: 3rem;
     border: solid 3px #000;
     box-shadow: #00f 5px 5px;
 }
+
 .center-item {
     display: flex;
     flex-direction: row;
@@ -607,7 +590,14 @@ a:link {
     align-content: stretch;
 }
 
-
+@media screen and (orientation:portrait) and (max-device-width: 900px) {
+    /* #warning {
+        display: block;
+    } */
+    .nav-menu {
+        flex-direction: column;
+    }
+}
 
 @media only screen and (max-device-width: 900px) {
     html {
@@ -634,9 +624,9 @@ a:link {
         left: 0px;
     }
     #project-random {
-        transform: translate(-95%, -55%);
-       -moz-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+        transform: translate(-85%, -50%);
+        -moz-transform: translate(-85%, -50%);
+        -o-transform: translate(-85%, -50%);
         -webkit-transform: translate(-85%, -50%);
     }
     .project-container {
@@ -662,7 +652,7 @@ a:link {
     .content-img img {
         max-width: 300px;
     }
-    #impressum{
+    #impressum {
         /* display: block;
         position: absolute;
         font-size: 0.75rem;
@@ -674,13 +664,8 @@ a:link {
         -webkit-transform: translate(-80%, -50%);
         -o-transform: translate(-80%, -50%);  */
         color: #ffffff;
-
-
     }
-    #impressum:hover{
+    #impressum:hover {
         color: rgb(0, 255, 0);
-        }
+    }
 }
-
-
-
