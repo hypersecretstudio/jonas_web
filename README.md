@@ -1,1 +1,4 @@
-# Jonas Website
+# Jonas Website Do NOT TOUCH THIS REPO!
+# DO NOT MOVE!
+# DO NOT RENAME!
+# DO NOT DO ANYTHING!
